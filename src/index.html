@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Wallpaper Engine to Opera GX</title>
+        <script defer src="render.js"></script>
+        <link rel="stylesheet" href="index.css"/>
+        <script src="https://kit.fontawesome.com/6ccc2473c8.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <template id="wallpaper-preview">
+            <div class="wallpaper-preview">
+                <img src="">
+                <span class="name"></span>
+                <div class="check hover">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <div class="type">
+                    <div class="type-video">
+                        <i class="fa-solid fa-file-video" style="color: var(--green);"></i>
+                        <span>Créé à partir d'une vidéo</span>
+                    </div>
+                    <div class="type-scene">
+                        <i class="fa-solid fa-clapperboard" style="color: var(--warnColor);"></i>
+                        <span>N'est pas créé à partir d'une vidéo</span>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <div id="content">
+            <div id="projects">
+                <h2><i class="fa-solid fa-house"></i> Mes projets :</h2>
+                <div id="projects-container" class="box container"></div>
+            </div>
+
+            <div id="wallpapers">
+                <h2><i class="fa-solid fa-image"></i> Choisir un fond d'écran Wallpaper Engine pour le project :</h2>
+                <div class="box">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="wallpaper-search" placeholder="Rechercher...">
+                    </div>
+                    <div id="wallpapers-container" class="container"></div>
+                </div>
+                <div class="buttons">
+                    <button id="wallpapers-cancel" style="background: var(--red);"><i class="fa-solid fa-xmark"></i> Annuler</button>
+                    <button id="wallpapers-next" style="background: var(--green);">
+                        Continuer <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="make">
+                <h2><i class="fa-solid fa-sliders"></i> Paramètres du project :</h2>
+                <div id="make-title" class="box">
+                    <img alt="Preview introuvable">
+                    <div class="texts">
+                        <label for="title">Nom :</label>
+                        <input type="text" class="lookingLikeText title">
+                        <label for="title">Description :</label>
+                        <input type="text" class="lookingLikeText description">
+                    </div>
+                </div>
+
+                <h2><i class="fa-solid fa-image"></i> Fond d'écran :</h2>
+                <div id="make-video" class="box">
+                    <div>
+                        <video loop muted autoplay></video>
+                    </div>
+                    <div class="texts">
+                        <span class="info"></span>
+                        <div class="record">
+                            <button class="record">Enregistrer la vidéo</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2><i class="fa-solid fa-palette"></i> Couleurs du thème :</h2>
+                <div id="make-colors" class="box">
+                    <div>
+                        <label for="theme-gx_accent"><i class="fa-solid fa-paintbrush"></i> Couleur principale :</label>
+                        <input type="color" id="theme-gx_accent">
+                    </div>
+                    <div>
+                        <label for="theme-gx_secondary_base"><i class="fa-solid fa-paint-roller"></i> Couleur secondaire :</label>
+                        <input type="color" id="theme-gx_secondary_base">
+                    </div>
+                </div>
+
+                <h2><i class="fa-solid fa-brush"></i> Prévisualiser le thème :</h2>
+                <div id="make-preview" class="box">
+                    <div id="make-preview-images">
+                        <img src="preview-filter/main.png" style="z-index: 15;">
+                        <img src="preview-filter/primary.png">
+                        <img src="preview-filter/secondary1.png">
+                        <img src="preview-filter/secondary2.png">
+                        <img src="preview-filter/secondary3.png">
+                        <video loop muted autoplay src="" id="make-preview-bg">
+                    </div>
+                </div>
+
+                <div id="make-done" class="buttons">
+                    <button id="make-cancel" style="background: var(--red);"><i class="fa-solid fa-xmark"></i> Annuler</button>
+                    <div>
+                        <button id="make-save" style="background: #181818;"><i class="fa-solid fa-floppy-disk"></i> Sauvegarder et fermer</button>
+                        <button id="make-export" style="background: var(--green);"><i class="fa-solid fa-download"></i> Sauvegarder et exporter</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading">
+                <span id="loading-message"></span>
+                <img id="loading-round" src="loading.gif">
+                <div id="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <span id="loading-info"></span>
+                <span id="loading-time"></span>
+            </div>
+        </div>
+    </body>
+</html>
